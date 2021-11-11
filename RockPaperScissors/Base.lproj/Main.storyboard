@@ -123,17 +123,42 @@
             </objects>
             <point key="canvasLocation" x="940" y="93.127962085308056"/>
         </scene>
-        <!--View Controller-->
+        <!--History View Controller-->
         <scene sceneID="zVc-6l-ImE">
             <objects>
-                <viewController id="SRJ-g9-zT4" sceneMemberID="viewController">
+                <viewController id="SRJ-g9-zT4" customClass="HistoryViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zff-nb-mfl">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eYn-vE-qgg">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="mga-5I-gKJ">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mga-5I-gKJ" id="bEd-3v-wYs">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VaY-aN-p3L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eYn-vE-qgg" firstAttribute="leading" secondItem="VaY-aN-p3L" secondAttribute="leading" id="OCH-sM-wAE"/>
+                            <constraint firstItem="VaY-aN-p3L" firstAttribute="trailing" secondItem="eYn-vE-qgg" secondAttribute="trailing" id="TZ1-vT-4ch"/>
+                            <constraint firstItem="VaY-aN-p3L" firstAttribute="bottom" secondItem="eYn-vE-qgg" secondAttribute="bottom" id="V1k-55-gUY"/>
+                            <constraint firstItem="eYn-vE-qgg" firstAttribute="top" secondItem="VaY-aN-p3L" secondAttribute="top" id="zG4-WR-PbJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ARd-9o-Mgc"/>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="eYn-vE-qgg" id="tMk-ne-nkm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTc-56-itb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

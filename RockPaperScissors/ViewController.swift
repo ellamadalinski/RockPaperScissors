@@ -42,21 +42,25 @@ class ViewController: UIViewController {
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 2:
             myChoice = .paper
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "You lost!"
             userLoses += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 3:
             myChoice = .scissors
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "You won!"
             userWins += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         default:
             myChoice = .rock
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         }
         
     }
@@ -69,21 +73,25 @@ class ViewController: UIViewController {
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "You won!"
             userWins += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 2:
             myChoice = .paper
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 3:
             myChoice = .scissors
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "You lost!"
             userLoses += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         default:
             myChoice = .paper
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         }
     }
         
@@ -96,25 +104,35 @@ class ViewController: UIViewController {
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "You lost!"
             userLoses += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 2:
             myChoice = .paper
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "You win!"
             userWins += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 3:
             myChoice = .scissors
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         default:
             myChoice = .paper
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         }
     }
     
     @IBAction func restartAction(_ sender: UIButton) {
+        myChoiceLabelOutlet.text = "My choice"
+        outcomeLabelOutlet.text = "Outcome"
+        recordLabelOutlet.text = "Record"
+        userWins = 0
+        userTies = 0
+        userLoses = 0
     }
     
     
