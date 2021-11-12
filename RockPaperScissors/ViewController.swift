@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var userWins : Int = 0
     var userTies : Int = 0
     var userLoses : Int = 0
+    var name : String = ""
     
     @IBOutlet weak var myChoiceLabelOutlet: UILabel!
     @IBOutlet weak var outcomeLabelOutlet: UILabel!
@@ -134,6 +135,23 @@ class ViewController: UIViewController {
         userTies = 0
         userLoses = 0
     }
+    
+    @IBAction func saveButtonAction(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Name", message: "Add a Name for the Game", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Type here"
+        }
+        let saveAction = UIAlertAction(title: "Save", style: .default) { a in
+            self.name = alert.textFields![0].text!
+        }
+        alert.addAction(saveAction)
+        present(alert, animated: true, completion: nil)
+        
+        
+        
+        //var newSave = Games(n: <#T##String#>, w: userWins, t: userTies, l: userLoses)
+    }
+    
     
     
 }
