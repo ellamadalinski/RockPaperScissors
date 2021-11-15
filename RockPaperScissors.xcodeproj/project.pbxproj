@@ -16,6 +16,7 @@
 		CE6DD653273B73C70064B426 /* RockPaperScissors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD651273B73C70064B426 /* RockPaperScissors.xcdatamodeld */; };
 		CE6DD655273B73C80064B426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6DD654273B73C80064B426 /* Assets.xcassets */; };
 		CE6DD658273B73C80064B426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6DD656273B73C80064B426 /* LaunchScreen.storyboard */; };
+		CEED7DBC273F6E1D001CCBB8 /* SavedCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED7DBB273F6E1D001CCBB8 /* SavedCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CE6DD654273B73C80064B426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6DD657273B73C80064B426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6DD659273B73C80064B426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEED7DBB273F6E1D001CCBB8 /* SavedCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				CE6DD64C273B73C70064B426 /* ViewController.swift */,
 				B6660474273EA8E80002EA5C /* Games.swift */,
 				CE6DD64E273B73C70064B426 /* Main.storyboard */,
+				CEED7DBB273F6E1D001CCBB8 /* SavedCustomCell.swift */,
 				B610038F273D57ED00C287F4 /* HistoryViewController.swift */,
 				CE6DD654273B73C80064B426 /* Assets.xcassets */,
 				CE6DD656273B73C80064B426 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 				CE6DD649273B73C70064B426 /* AppDelegate.swift in Sources */,
 				CE6DD653273B73C70064B426 /* RockPaperScissors.xcdatamodeld in Sources */,
 				B6660475273EA8E80002EA5C /* Games.swift in Sources */,
+				CEED7DBC273F6E1D001CCBB8 /* SavedCustomCell.swift in Sources */,
 				B6100390273D57ED00C287F4 /* HistoryViewController.swift in Sources */,
 				CE6DD64B273B73C70064B426 /* SceneDelegate.swift in Sources */,
 			);

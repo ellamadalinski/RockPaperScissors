@@ -23,6 +23,11 @@ class ViewController: UIViewController {
     var userTies : Int = 0
     var userLoses : Int = 0
     var name : String = ""
+    var saves : [Games] = []
+    @IBOutlet weak var myChoiceImageViewOutlet: UIImageView!
+    @IBOutlet weak var userChoiceRock: UIButton!
+    @IBOutlet weak var userChoicePaper: UIButton!
+    @IBOutlet weak var userChoiceScissors: UIButton!
     
     @IBOutlet weak var myChoiceLabelOutlet: UILabel!
     @IBOutlet weak var outcomeLabelOutlet: UILabel!
@@ -32,32 +37,38 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        myChoiceImageViewOutlet.image = UIImage(named: "rps")
     }
 
     @IBAction func rockAction(_ sender: UIButton) {
         userChoice = .rock
+        userChoiceRock.backgroundColor = UIColor.yellow
         let num = Int.random(in: 1...3)
         switch num {
         case 1:
             myChoice = .rock
+            myChoiceImageViewOutlet.image = UIImage(named: "rock")
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 2:
             myChoice = .paper
+            myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "You lost!"
             userLoses += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 3:
             myChoice = .scissors
+            myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "You won!"
             userWins += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         default:
             myChoice = .rock
+            myChoiceImageViewOutlet.image = UIImage(named: "rock")
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
@@ -67,28 +78,33 @@ class ViewController: UIViewController {
     }
     @IBAction func paperAction(_ sender: UIButton) {
         userChoice = .paper
+        userChoicePaper.backgroundColor = UIColor.yellow
         let num = Int.random(in: 1...3)
         switch num {
         case 1:
             myChoice = .rock
+            myChoiceImageViewOutlet.image = UIImage(named: "rock")
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "You won!"
             userWins += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 2:
             myChoice = .paper
+            myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 3:
             myChoice = .scissors
+            myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "You lost!"
             userLoses += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         default:
             myChoice = .paper
+            myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
@@ -98,28 +114,33 @@ class ViewController: UIViewController {
         
     @IBAction func scissorsAction(_ sender: UIButton) {
         userChoice = .scissors
+        userChoiceScissors.backgroundColor = UIColor.yellow
         let num = Int.random(in: 1...3)
         switch num {
         case 1:
             myChoice = .rock
+            myChoiceImageViewOutlet.image = UIImage(named: "rock")
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "You lost!"
             userLoses += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 2:
             myChoice = .paper
+            myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "You win!"
             userWins += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         case 3:
             myChoice = .scissors
+            myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
             recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
         default:
-            myChoice = .paper
+            myChoice = .scissors
+            myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
@@ -134,6 +155,11 @@ class ViewController: UIViewController {
         userWins = 0
         userTies = 0
         userLoses = 0
+        myChoiceImageViewOutlet.image = UIImage(named: "rps")
+        userChoiceRock.backgroundColor = UIColor.black
+        userChoicePaper.backgroundColor = UIColor.black
+        userChoiceScissors.backgroundColor = UIColor.black
+        
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
@@ -144,15 +170,31 @@ class ViewController: UIViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default) { a in
             self.name = alert.textFields![0].text!
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
         alert.addAction(saveAction)
         present(alert, animated: true, completion: nil)
         
         
+        var newSave = Games(n: name, w: userWins, t: userTies, l: userLoses)
+        saves.append(newSave)
         
-        //var newSave = Games(n: <#T##String#>, w: userWins, t: userTies, l: userLoses)
+        myChoiceLabelOutlet.text = "My choice"
+        outcomeLabelOutlet.text = "Outcome"
+        recordLabelOutlet.text = "Record"
+        userWins = 0
+        userTies = 0
+        userLoses = 0
+        myChoiceImageViewOutlet.image = UIImage(named: "rps")
+        userChoiceRock.backgroundColor = UIColor.black
+        userChoicePaper.backgroundColor = UIColor.black
+        userChoiceScissors.backgroundColor = UIColor.black
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nvc = segue.destination as! HistoryViewController
+        nvc.incoming = saves
+    }
     
 }
 
