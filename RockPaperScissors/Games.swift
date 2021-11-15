@@ -12,13 +12,13 @@ public class Games{
     var name : String
     var wins : Int
     var ties : Int
-    var loses : Int
+    var losses : Int
     
     init(n : String, w : Int, t : Int, l : Int){
         name = n
         wins = w
         ties = t
-        loses = l
+        losses = l
     }
     
 }

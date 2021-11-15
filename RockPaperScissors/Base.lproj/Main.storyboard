@@ -73,7 +73,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="View Saved"/>
                                         <connections>
-                                            <segue destination="SRJ-g9-zT4" kind="show" id="0zX-md-FlL"/>
+                                            <segue destination="SRJ-g9-zT4" kind="show" id="7PS-Ss-sDw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -206,8 +206,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loses:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTU-4J-a63">
-                                                    <rect key="frame" x="268" y="58" width="110" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Losses:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOH-rz-KTI">
+                                                    <rect key="frame" x="268" y="58" width="102" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -216,10 +216,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="losesLabelOutlet" destination="eTU-4J-a63" id="hm7-XA-tju"/>
-                                            <outlet property="nameLabelOutlet" destination="csG-78-xvF" id="6qK-E2-RSD"/>
-                                            <outlet property="tiesLabelOutlet" destination="dE3-3r-EzC" id="mNZ-Vv-6J8"/>
-                                            <outlet property="winsLabelOutlet" destination="k1O-KC-OTc" id="jCJ-0U-doq"/>
+                                            <outlet property="lossesLabelOutlet" destination="qOH-rz-KTI" id="Dpt-Jt-oOv"/>
+                                            <outlet property="nameLabelOutlet" destination="csG-78-xvF" id="gOY-nP-iNL"/>
+                                            <outlet property="tiesLabelOutlet" destination="dE3-3r-EzC" id="gki-dy-k4h"/>
+                                            <outlet property="winsLabelOutlet" destination="k1O-KC-OTc" id="9ue-VJ-bb0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

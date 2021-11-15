@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var userChoice : users = .rock
     var userWins : Int = 0
     var userTies : Int = 0
-    var userLoses : Int = 0
+    var userLosses : Int = 0
     var name : String = ""
     var saves : [Games] = []
     @IBOutlet weak var myChoiceImageViewOutlet: UIImageView!
@@ -55,28 +55,28 @@ class ViewController: UIViewController {
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         case 2:
             myChoice = .paper
             myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "You lost!"
-            userLoses += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            userLosses += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         case 3:
             myChoice = .scissors
             myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "You won!"
             userWins += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         default:
             myChoice = .rock
             myChoiceImageViewOutlet.image = UIImage(named: "rock")
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         }
         
     }
@@ -94,28 +94,28 @@ class ViewController: UIViewController {
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "You won!"
             userWins += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         case 2:
             myChoice = .paper
             myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         case 3:
             myChoice = .scissors
             myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "You lost!"
-            userLoses += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            userLosses += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         default:
             myChoice = .paper
             myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         }
     }
         
@@ -132,29 +132,29 @@ class ViewController: UIViewController {
             myChoiceImageViewOutlet.image = UIImage(named: "rock")
             myChoiceLabelOutlet.text = "Rock"
             outcomeLabelOutlet.text = "You lost!"
-            userLoses += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            userLosses += 1
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         case 2:
             myChoice = .paper
             myChoiceImageViewOutlet.image = UIImage(named: "paper")
             myChoiceLabelOutlet.text = "Paper"
             outcomeLabelOutlet.text = "You win!"
             userWins += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         case 3:
             myChoice = .scissors
             myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         default:
             myChoice = .scissors
             myChoiceImageViewOutlet.image = UIImage(named: "scissors")
             myChoiceLabelOutlet.text = "Scissors"
             outcomeLabelOutlet.text = "We tied!"
             userTies += 1
-            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLoses)"
+            recordLabelOutlet.text = "\(userWins)-\(userTies)-\(userLosses)"
         }
     }
     
@@ -165,7 +165,7 @@ class ViewController: UIViewController {
         recordLabelOutlet.text = "Record"
         userWins = 0
         userTies = 0
-        userLoses = 0
+        userLosses = 0
         myChoiceImageViewOutlet.image = UIImage(named: "rps")
         userChoiceRock.backgroundColor = UIColor.black
         userChoicePaper.backgroundColor = UIColor.black
@@ -180,6 +180,8 @@ class ViewController: UIViewController {
         }
         let saveAction = UIAlertAction(title: "Save", style: .default) { a in
             self.name = alert.textFields![0].text!
+            var newSave = Games(n: self.name, w: self.userWins, t: self.userTies, l: self.userLosses)
+            self.saves.append(newSave)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -187,16 +189,13 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
         
-        var newSave = Games(n: name, w: userWins, t: userTies, l: userLoses)
-        saves.append(newSave)
-        
         myChoiceLabelOutlet.text = "My choice"
         outcomeLabelOutlet.text = "Outcome"
         userChoiceLabelOutlet.text = "User choice"
         recordLabelOutlet.text = "Record"
         userWins = 0
         userTies = 0
-        userLoses = 0
+        userLosses = 0
         myChoiceImageViewOutlet.image = UIImage(named: "rps")
         userChoiceRock.backgroundColor = UIColor.black
         userChoicePaper.backgroundColor = UIColor.black
