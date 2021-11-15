@@ -156,6 +156,7 @@
                         <outlet property="myChoiceLabelOutlet" destination="Jnc-7c-evB" id="tWB-Qn-Qnj"/>
                         <outlet property="outcomeLabelOutlet" destination="Ln6-TE-dyw" id="4XA-lH-jrH"/>
                         <outlet property="recordLabelOutlet" destination="TYD-Ce-yFt" id="JhO-mN-F5E"/>
+                        <outlet property="userChoiceLabelOutlet" destination="hLd-pk-VeQ" id="nUk-g2-WzM"/>
                         <outlet property="userChoicePaper" destination="MiU-K2-ptH" id="h1M-Iv-Wkg"/>
                         <outlet property="userChoiceRock" destination="ctH-Bg-Nhc" id="Fgd-28-dIc"/>
                         <outlet property="userChoiceScissors" destination="kkj-li-rwi" id="2UF-Ci-Bvz"/>

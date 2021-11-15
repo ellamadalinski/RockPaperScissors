@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myChoiceLabelOutlet: UILabel!
     @IBOutlet weak var outcomeLabelOutlet: UILabel!
+    @IBOutlet weak var userChoiceLabelOutlet: UILabel!
     @IBOutlet weak var recordLabelOutlet: UILabel!
     
     
@@ -42,7 +43,10 @@ class ViewController: UIViewController {
 
     @IBAction func rockAction(_ sender: UIButton) {
         userChoice = .rock
+        userChoiceLabelOutlet.text = "Rock"
         userChoiceRock.backgroundColor = UIColor.yellow
+        userChoicePaper.backgroundColor = UIColor.black
+        userChoiceScissors.backgroundColor = UIColor.black
         let num = Int.random(in: 1...3)
         switch num {
         case 1:
@@ -78,7 +82,10 @@ class ViewController: UIViewController {
     }
     @IBAction func paperAction(_ sender: UIButton) {
         userChoice = .paper
+        userChoiceLabelOutlet.text = "Paper"
         userChoicePaper.backgroundColor = UIColor.yellow
+        userChoiceRock.backgroundColor = UIColor.black
+        userChoiceScissors.backgroundColor = UIColor.black
         let num = Int.random(in: 1...3)
         switch num {
         case 1:
@@ -114,7 +121,10 @@ class ViewController: UIViewController {
         
     @IBAction func scissorsAction(_ sender: UIButton) {
         userChoice = .scissors
+        userChoiceLabelOutlet.text = "Scissors"
         userChoiceScissors.backgroundColor = UIColor.yellow
+        userChoicePaper.backgroundColor = UIColor.black
+        userChoiceRock.backgroundColor = UIColor.black
         let num = Int.random(in: 1...3)
         switch num {
         case 1:
@@ -151,6 +161,7 @@ class ViewController: UIViewController {
     @IBAction func restartAction(_ sender: UIButton) {
         myChoiceLabelOutlet.text = "My choice"
         outcomeLabelOutlet.text = "Outcome"
+        userChoiceLabelOutlet.text = "User choice"
         recordLabelOutlet.text = "Record"
         userWins = 0
         userTies = 0
@@ -181,6 +192,7 @@ class ViewController: UIViewController {
         
         myChoiceLabelOutlet.text = "My choice"
         outcomeLabelOutlet.text = "Outcome"
+        userChoiceLabelOutlet.text = "User choice"
         recordLabelOutlet.text = "Record"
         userWins = 0
         userTies = 0
