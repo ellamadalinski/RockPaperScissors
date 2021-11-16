@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B6100390273D57ED00C287F4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610038F273D57ED00C287F4 /* HistoryViewController.swift */; };
-		B6660475273EA8E80002EA5C /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6660474273EA8E80002EA5C /* Games.swift */; };
 		CE6DD649273B73C70064B426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD648273B73C70064B426 /* AppDelegate.swift */; };
 		CE6DD64B273B73C70064B426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD64A273B73C70064B426 /* SceneDelegate.swift */; };
 		CE6DD64D273B73C70064B426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD64C273B73C70064B426 /* ViewController.swift */; };
@@ -21,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		B610038F273D57ED00C287F4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		B6660474273EA8E80002EA5C /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		CE6DD645273B73C70064B426 /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6DD648273B73C70064B426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6DD64A273B73C70064B426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				CE6DD648273B73C70064B426 /* AppDelegate.swift */,
 				CE6DD64A273B73C70064B426 /* SceneDelegate.swift */,
 				CE6DD64C273B73C70064B426 /* ViewController.swift */,
-				B6660474273EA8E80002EA5C /* Games.swift */,
 				CE6DD64E273B73C70064B426 /* Main.storyboard */,
 				CEED7DBB273F6E1D001CCBB8 /* SavedCustomCell.swift */,
 				B610038F273D57ED00C287F4 /* HistoryViewController.swift */,
@@ -153,7 +150,6 @@
 				CE6DD64D273B73C70064B426 /* ViewController.swift in Sources */,
 				CE6DD649273B73C70064B426 /* AppDelegate.swift in Sources */,
 				CE6DD653273B73C70064B426 /* RockPaperScissors.xcdatamodeld in Sources */,
-				B6660475273EA8E80002EA5C /* Games.swift in Sources */,
 				CEED7DBC273F6E1D001CCBB8 /* SavedCustomCell.swift in Sources */,
 				B6100390273D57ED00C287F4 /* HistoryViewController.swift in Sources */,
 				CE6DD64B273B73C70064B426 /* SceneDelegate.swift in Sources */,

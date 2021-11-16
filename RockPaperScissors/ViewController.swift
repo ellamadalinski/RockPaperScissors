@@ -15,6 +15,13 @@ enum users{
     case rock, paper, scissors
 }
 
+struct Games : Codable{
+    var name : String
+    var wins : Int
+    var ties : Int
+    var losses : Int
+}
+
 class ViewController: UIViewController {
     
     
@@ -190,7 +197,7 @@ class ViewController: UIViewController {
         }
         let saveAction = UIAlertAction(title: "Save", style: .default) { a in
             self.name = alert.textFields![0].text!
-            var newSave = Games(n: self.name, w: self.userWins, t: self.userTies, l: self.userLosses)
+            var newSave = Games(name: self.name, wins: self.userWins, ties: self.userTies, losses: self.userLosses)
             self.saves.append(newSave)
             
             self.myChoiceLabelOutlet.text = "My choice"
@@ -204,6 +211,11 @@ class ViewController: UIViewController {
             self.userChoiceRock.backgroundColor = UIColor.black
             self.userChoicePaper.backgroundColor = UIColor.black
             self.userChoiceScissors.backgroundColor = UIColor.black
+            
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(self.saves) {
+                               UserDefaults.standard.set(encoded, forKey: "mySaves")
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -211,10 +223,7 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
         
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(saves) {
-                           UserDefaults.standard.set(encoded, forKey: "mySaves")
-        }
+        
         
     }
     

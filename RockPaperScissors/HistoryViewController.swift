@@ -14,18 +14,18 @@ class HistoryViewController: UIViewController , UITableViewDelegate , UITableVie
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     var incoming : [Games] = []
-    var path : [IndexPath] = []
+    //var path : [IndexPath] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         
-        var count = 0
-        for save in incoming {
-            tableView(tableViewOutlet, cellForRowAt: path[count])
-            count+=1
-        }
+//        var count = 0
+//        for save in incoming {
+//            tableView(tableViewOutlet, cellForRowAt: path[count])
+//            count+=1
+//        }
         
     }
     
@@ -40,13 +40,18 @@ class HistoryViewController: UIViewController , UITableViewDelegate , UITableVie
         cell.tiesLabelOutlet.text = "Ties: \(String(incoming[indexPath.row].ties))"
         cell.lossesLabelOutlet.text = "Losses: \(String(incoming[indexPath.row].losses))"
         
-        path.append(indexPath)
+        //path.append(indexPath)
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 88
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        tableViewOutlet.reloadData()
     }
     
 }
