@@ -17,6 +17,7 @@ enum users{
 
 class ViewController: UIViewController {
     
+    
     var myChoice : mine = .rock
     var userChoice : users = .rock
     var userWins : Int = 0
@@ -39,6 +40,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         myChoiceImageViewOutlet.image = UIImage(named: "rps")
+        
+        if let items = UserDefaults.standard.data(forKey: "mySaves") {
+                        let decoder = JSONDecoder()
+                        if let decoded = try? decoder.decode([Games].self, from: items) {
+                            saves = decoded
+                        }
+        }
+        
+        
     }
 
     @IBAction func rockAction(_ sender: UIButton) {
@@ -182,6 +192,18 @@ class ViewController: UIViewController {
             self.name = alert.textFields![0].text!
             var newSave = Games(n: self.name, w: self.userWins, t: self.userTies, l: self.userLosses)
             self.saves.append(newSave)
+            
+            self.myChoiceLabelOutlet.text = "My choice"
+            self.outcomeLabelOutlet.text = "Outcome"
+            self.userChoiceLabelOutlet.text = "User choice"
+            self.recordLabelOutlet.text = "Record"
+            self.userWins = 0
+            self.userTies = 0
+            self.userLosses = 0
+            self.myChoiceImageViewOutlet.image = UIImage(named: "rps")
+            self.userChoiceRock.backgroundColor = UIColor.black
+            self.userChoicePaper.backgroundColor = UIColor.black
+            self.userChoiceScissors.backgroundColor = UIColor.black
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -189,17 +211,11 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
         
-        myChoiceLabelOutlet.text = "My choice"
-        outcomeLabelOutlet.text = "Outcome"
-        userChoiceLabelOutlet.text = "User choice"
-        recordLabelOutlet.text = "Record"
-        userWins = 0
-        userTies = 0
-        userLosses = 0
-        myChoiceImageViewOutlet.image = UIImage(named: "rps")
-        userChoiceRock.backgroundColor = UIColor.black
-        userChoicePaper.backgroundColor = UIColor.black
-        userChoiceScissors.backgroundColor = UIColor.black
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(saves) {
+                           UserDefaults.standard.set(encoded, forKey: "mySaves")
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

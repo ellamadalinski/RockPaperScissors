@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Games{
+public class Games: Codable{
     
     var name : String
     var wins : Int

@@ -14,11 +14,18 @@ class HistoryViewController: UIViewController , UITableViewDelegate , UITableVie
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     var incoming : [Games] = []
+    var path : [IndexPath] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        
+        var count = 0
+        for save in incoming {
+            tableView(tableViewOutlet, cellForRowAt: path[count])
+            count+=1
+        }
         
     }
     
@@ -28,12 +35,18 @@ class HistoryViewController: UIViewController , UITableViewDelegate , UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! SavedCustomCell
-//        cell.nameLabelOutlet.text = incoming[indexPath.row].name
-//        cell.winsLabelOutlet.text = String(incoming[indexPath.row].wins)
-//        cell.tiesLabelOutlet.text = String(incoming[indexPath.row].ties)
-//        cell.lossesLabelOutlet.text = String(incoming[indexPath.row].loses)
-        cell.configure(nl: incoming[indexPath.row].name, wl: String(incoming[indexPath.row].wins), tl: String(incoming[indexPath.row].ties), ll: String(incoming[indexPath.row].losses))
+        cell.nameLabelOutlet.text = "\(incoming[indexPath.row].name)"
+        cell.winsLabelOutlet.text = "Wins: \(String(incoming[indexPath.row].wins))"
+        cell.tiesLabelOutlet.text = "Ties: \(String(incoming[indexPath.row].ties))"
+        cell.lossesLabelOutlet.text = "Losses: \(String(incoming[indexPath.row].losses))"
+        
+        path.append(indexPath)
+
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 88
+    }
+    
 }

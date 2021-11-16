@@ -15,12 +15,6 @@ class SavedCustomCell: UITableViewCell {
     @IBOutlet weak var tiesLabelOutlet: UILabel!
     @IBOutlet weak var lossesLabelOutlet: UILabel!
     
-    func configure(nl: String, wl: String, tl: String, ll: String){
-        nameLabelOutlet.text = nl
-        winsLabelOutlet.text = wl
-        tiesLabelOutlet.text = tl
-        lossesLabelOutlet.text = ll
-    }
     
 
 }
