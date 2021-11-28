@@ -5,6 +5,36 @@
 //  Created by Ella Madalinski on 11/9/21.
 //
 
+//Programming Concepts:
+//1. Variables and constants
+//2. Operators
+//3. If/else
+//4. Switch statements
+//5. Arrays
+//6. Functions
+//7. Closures
+//8. Optionals
+//9. Structs
+//10. Enums
+//11. Value vs. Reference
+//12. Safely unwrapping
+//13. Inheritance
+//14. Persistence with User Defaults
+//15. Github
+
+//UI Elements
+//1. Textfield
+//2. Button
+//3. Label
+//4. Stackview
+//5. Tableview
+//6. Imageview
+//7. Navigation Controller
+//8. View Controller
+//9. Constraints
+//10. HIGS
+
+
 import UIKit
 
 enum mine{
